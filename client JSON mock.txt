@@ -1,0 +1,24 @@
+{
+	users =[
+			{id:1; username:dave; password:dave1},
+			{id:2; username:paul; password:paul1},
+			{id:3; username:alexa; password:alexa1},
+			{id:4; username:steve; password:steve1}
+	       ]
+}
+
+{
+	clients = [
+			{
+				id:1; 
+				name: All Things Comedy; 
+				status: Active; 
+				url: www.allthingscomedy.com;
+				address:[123 Main St., Apt. 1, Test, OH, USA, 12345, created_at:2018-06-13, updated_at:2018-06-13]
+				contacts:[
+						{name: Todd Jackson; primary_contact:true; position:""; email:todd@allthingscomedy.com; phone:""; created_at:2018-06-13; updated_at:2018-06-13;}
+						{name: Rachel Garcia; primary_contact:false; position:""; email:rachel@allthingscomedy.com; phone:""; created_at:2018-06-13; updated_at:2018-06-13;}
+					 ], 
+		
+		  ]
+}

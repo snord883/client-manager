@@ -1,0 +1,582 @@
+
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+
+// Variables
+@import "variables";
+
+body, .sidebar, .MainView{margin: 0;}
+
+body, a{
+  font-family: 'Muli',sans-serif;
+  color: $font-color;
+}
+
+::-webkit-scrollbar {width: 0px;}
+
+body, .App, #root{overflow: auto;}
+
+*{box-sizing: border-box;}
+
+a{
+  text-decoration: none;
+
+  &:hover{cursor: pointer;}
+
+  svg{display: block;}
+}
+
+button{
+  border: none;
+}
+
+h2, h3{margin-top: 0;}
+
+select, input{
+  border: none;
+}
+
+.centerAbsolutely{
+  position: absolute;
+  top: 50%;
+  left:50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%,-50%);
+  text-align: center;
+}
+
+.editing{
+  font-size: inherit;
+  font-weight: inherit;
+  background-color: #edeef2;
+  text-transform: none;
+}
+
+.LoginPage{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: #eeeff1;
+  z-index: 0;
+
+  .LoginForm{
+    @extend .centerAbsolutely;
+    z-index: 10;
+  }
+
+  input, .errorMessage{
+    padding: 5px 0;
+    display: block;
+    margin: 10px auto;
+
+    &.error{
+      border: 1px solid #ff8484;
+    }
+  }
+
+  button{
+    background-color: $primary_teal;
+  }
+}
+
+.errorMessage{
+  font-size:10px;
+  color: #ff8484;
+}
+
+.headerTitle, .sectionTitle, .clientTitle,
+label, .primaryCheckBox_label.editing,
+.elementName, .confirmDelete h2, .userName{
+  font-family: sans-serif;
+  text-transform: uppercase;
+  font-weight: 900;
+  &.editing{
+    text-transform: none;
+  }
+}
+
+.rect_button, .confirmDelete, .cancelButton, .deleteButton, .transferButton, .clientStatusBar, .ClientTools, .UserTools, .logInButton{
+  border-radius: $border_radius;
+  padding: 9px 20px;
+  display: inline-block;
+  color: white;
+}
+
+.rect_button{color: white;}
+
+@mixin baseLetterIcon($font-size){
+  display: inline-block;
+  text-align: center;
+  font-size: $font-size;
+  width: $font-size * 3;
+  height: $font-size * 3;
+  line-height: $font-size * 3;
+  margin-right: $font-size;
+  background-color: $primary_teal;
+  color: white;
+  border-radius: 50%;
+}
+
+.imageIcons{border-radius: 50%;}
+
+.addIcon, .signOut{float: right;}
+
+@mixin baseaddIcon($icon_size){
+  @extend .imageIcons;
+  @extend .shaded_icon;
+
+  width: $icon_size;
+  height: $icon_size;
+  line-height: $icon_size;
+  font-size: $icon_size;
+  color: $editIcon_grey;
+}
+
+.editIcon, .saveIcon, .cancelIcon{
+  @extend .imageIcons;
+  @extend .shaded_icon;
+
+  color: white;
+  float: right;
+  width: $editIcon_size;
+  height: $editIcon_size;
+  line-height: $editIcon_size;
+  margin-left: $editIcon_size / 3;
+  text-align: center;
+  font-size: $editIcon_size / 2;
+}
+
+.editIcon{background-color: $editIcon_grey;}
+
+.saveIcon{background-color: #46d4ba;}
+
+.cancelIcon{
+  background-color: $cancel_red;
+  font-size: $editIcon_size;
+}
+
+.StatusBar, .filteredClientSection{
+  width: 100%;
+}
+
+.StatusBar{
+  height: 24px;
+  line-height: 24px;
+  background-color: #edeef2;
+}
+
+.sidebar, .MainView{
+  position: relative;
+  height: 100vh;
+  overflow-y: scroll;
+  float: left;
+}
+
+.shaded_element{
+  -webkit-box-shadow: 0px 2px 14px 0px #000;
+  -moz-box-shadow:    0px 2px 14px 0px #000;
+  box-shadow:         0px 2px 14px 0px #000;
+}
+
+.shaded_icon{
+  -webkit-box-shadow: 0px 2px 14px 0px $editIcon_grey;
+  -moz-box-shadow:    0px 2px 14px 0px $editIcon_grey;
+  box-shadow:         0px 2px 14px 0px $editIcon_grey;
+}
+
+.sidebar_toggle{
+  position: fixed;
+  top:0;
+  left: 5px;
+  font-size: 30px;
+  color: $primary_teal;
+}
+
+.sidebar{
+  width: $sidebar_width;
+  background-color: white;
+  z-index: 10;
+  @extend .shaded_element;
+
+  .topSection{
+    padding: $sidebar_padding;
+  }
+  .vfLogo{
+    display: block;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .addClientLine{
+    margin-bottom: 25px;
+    border-bottom: 2px solid #d7d8dc;
+    h3{
+      display: inline-block;
+    }
+    .addIcon{
+      @include baseaddIcon(24px);
+    }
+  }
+  // .StatusBar, .filteredClientSection{
+  //   width: 100%;
+  // }
+  // .StatusBar{
+  //   height: 24px;
+  //   line-height: 24px;
+  //   background-color: #edeef2;
+  // }
+  .filteredClientRow{
+    $font-size: 15px;
+    $deleteIcon_width: 15px;
+    display: inline-block;
+    width: 100%;
+    padding: ($sidebar_padding / 2) $sidebar_padding; //top/bottom half & left/right whole
+
+    &:hover{
+      background-color: #f6f7f9;
+    }
+
+    .clientIcon{
+      @include baseLetterIcon($font-size);
+    }
+
+    .clientRowName{
+      $margin_right: 10px;
+      width: calc(100% - #{$font-size} * 4 - #{$deleteIcon_width} - #{$margin_right});
+      margin-right: $margin_right;
+    }
+
+    span{
+      display: inline-block;
+      font-size: $font-size;
+      vertical-align: middle;
+    }
+
+    .deleteClientIcon{
+      width: $deleteIcon_width;
+    }
+  }
+} //End .sidebar
+
+.MainView{
+  overflow: auto;
+  width: calc(100% - #{$sidebar_width});
+  min-height: 100vh;
+  padding: $mainView_padding;
+  background-color: #eeeff1;
+
+  .welcomePage{
+    @extend .centerAbsolutely;
+
+    h2{
+      font-weight: lighter;
+    }
+
+    .ClientTools, .UserTools{
+      background-color: $primary_teal;
+    }
+
+    .UserTools{
+      margin-left: 15px;
+    }
+
+    .toolIconRow{
+      margin-top: 15px;
+
+      a{
+        // @include baseaddIcon(32px);
+      }
+    }
+  } //End .welcomePage
+
+  .ClientForm, .SubSectionForm, .UserForm{
+    position: relative;
+    background-color: white;
+    margin-bottom: $mainView_padding * .75;
+    border-radius: $border_radius;
+    @extend .shaded_element;
+
+    .headerTitle, .clientTitle, .userName{
+      font-size: 25px;
+    }
+  }
+
+  .ClientForm, .UserForm{
+    $icon_size_w_margin: 120px;
+    padding: $info_padding;
+
+    .clientIcon, .userIcon{
+      float: left;
+      @include baseLetterIcon($icon_size_w_margin / 4);
+    }
+
+    .userIcon{
+      background-color: $userOrange;
+    }
+
+    .clientHeader, .userHeader{
+      display: inline-block;
+      width: calc(100% - #{$icon_size_w_margin} - #{$info_padding} * 2 - #{$editIcon_size} * 3);
+      min-height: 90px;
+      margin-top: $icon_size_w_margin / 5;
+
+      input{
+        width: 100%;
+      }
+
+      .passwordLabel{
+        display: inline-block;
+        margin-top: 10px;
+      }
+
+      select{
+        @extend .editing;
+        width: 80%;
+        margin-top: 10px;
+      }
+
+      .clientTitle, .userName{
+        height: 30px;
+
+        // &.editing{
+        //   text-transform: none;
+        // }
+      }
+
+      .clientUrl{
+        height: 20px;
+
+        &.Link{
+          display: block;
+        }
+      }
+    }//end .clientHeader
+
+    .clientAddressSection{
+      width: 100%;
+      margin-top: 25px;
+      display: inline-block;
+
+      .clientAddressFields{
+        width: calc(50% - .5em);
+        margin: 0.5em;
+        float: left;
+        display: grid;
+        overflow: hidden;
+        border-bottom: 1px solid $editIcon_grey;
+        transition: all 0.3s ease-in-out;
+
+        input{
+          padding: 10px 0;
+          margin: 0;
+          font-weight: inherit;
+          font-size: inherit;
+        }
+
+        &:nth-of-type(2n-1){
+          margin-left: 0;
+        }
+
+        &:nth-of-type(2n-2){
+          margin-right: 0;
+        }
+      }//.end clientAddressFields
+    }//end .clientAddressSection
+  }//end .ClientForm
+
+  .SubSectionHeader{
+    width: 100%;
+    padding: $info_padding;
+    background: #f5f5f5;
+    border-radius: $border_radius $border_radius 0 0;
+
+    .headerTitle{
+      display: inline-block;
+    }
+
+    .addIcon{
+      @include baseaddIcon($editIcon_size);
+    }
+  }
+
+  .elementInfo{
+    padding: $info_padding;
+  }
+
+  .elementInfo{
+    $elementIconMain_size: 50px;
+    .elementIconMain{
+      @include baseaddIcon($elementIconMain_size);
+
+      display: inline-block;
+      float: left;
+      margin-right: $info_padding;
+    }
+
+    .info{
+      width: calc(100% - #{$elementIconMain_size} - #{$info_padding} - #{$indCtaIcon_size} * 3 - 1px); // *3 = RightNavIcons width + .5 margin-left
+      display: inline-block;
+
+      div{
+        height: 25px;
+      }
+
+      .primaryCheckBox_label{visibility: hidden;}
+
+      .primaryCheckBox_label.checked{
+        @extend .rect_button;
+        background-color: $primary_teal;
+        color: white;
+        padding: 5px;
+      }
+
+      .primaryCheckBox_label.editing {
+        background-color: inherit;
+        color: inherit;
+        visibility: hidden;
+      }
+
+      .primaryCheckBox_label.editing, .primaryCheckBox_label.checked{
+        visibility: visible;
+      }
+
+      div:last-child{
+        margin-top: 10px;
+
+        > span{
+          display: inline-block;
+          width: 33%;
+
+          input{
+            width: calc(100% - 25px);
+          }
+        }
+      }
+    }//.end .info
+  }//end .elementInfo
+
+
+  .info.withoutIcon{
+    min-width: calc(100% - #{$indCtaIcon_size} * 3); // *3 = RightNavIcons width + .5 margin-left
+    display: inline-block;
+
+    .noteHeaderRow{
+      display: flex;
+
+      .noteTitle{
+        min-width: 300px;
+      }
+
+      .createDate{
+        width: 100px;
+        height: 1em;
+        margin: auto 0 auto 15px;
+        font-size: 12px;
+        line-height: 12px;
+        overflow: hidden;
+        color: grey;
+      }
+    }
+
+    textarea{
+      display: block;
+      min-width: 100%;
+      height: 1.25em;
+      margin-top: 10px;
+      border: none;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      resize: none;
+    }
+  }//end .info
+
+}//end .MainView
+
+.bottom_decal{
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+}
+
+.rightNavIcons{
+  color: #a9b1bc;
+  width: $indCtaIcon_size;
+  height: $indCtaIcon_size;
+  line-height: $indCtaIcon_size;
+  font-size: $indCtaIcon_size;
+  margin-top: $indCtaIcon_size;
+  margin-left: $indCtaIcon_size * .5;
+  white-space: none;
+  background-color: inherit;
+  padding: 0;
+}
+
+.SubSectionRow, .NoteRow{
+  padding: 15px 0;
+}
+
+.confirmDelete-background{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .8);
+  z-index: 10000;
+
+  .confirmDelete{
+    @extend .centerAbsolutely;
+    width: 350px;
+    padding: 25px;
+    background-color: white;
+    color: inherit;
+
+    .closeConfirmation{
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      color: grey;
+    }
+
+    .icon{
+      font-size: 28px;
+    }
+
+    p{
+      font-weight: lighter;
+    }
+
+    .cancelButton{
+      background-color: grey;
+    }
+
+    .deleteButton{
+      background-color: $cancel_red;
+      margin-left: 15px;
+    }
+
+    .transferButton{
+      background-color: $userOrange;
+      margin-left: 15px;
+    }
+  }//end .confirmDelete
+}//end .confirmDelete-background
+
+@media only screen and (max-width: $sidebar_collapse){
+  .sidebar{
+    position: absolute;
+    left: -1 * $sidebar_width;
+
+    &.active_nav{left:0}
+  }
+
+  .sidebar_toggle{
+    z-index: 1001;
+
+    &.active_nav{left: $sidebar_width + 5px;}
+  }
+
+  .MainView{width: 100%;}
+}

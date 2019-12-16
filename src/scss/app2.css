@@ -1,0 +1,348 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+body, .sidebar, .mainView {
+  margin: 0; }
+
+body, a {
+  font-family: 'Muli',sans-serif;
+  color: #3d4045; }
+
+::-webkit-scrollbar {
+  width: 0px; }
+
+body, .container {
+  overflow: auto; }
+
+* {
+  box-sizing: border-box; }
+
+a {
+  text-decoration: none; }
+  a svg {
+    display: block; }
+
+h2, h3 {
+  margin-top: 0; }
+
+select, input {
+  border: none; }
+
+.headerTitle, .sectionTitle, .clientTitle, .noteTitle,
+.clientAddressFields label, .primaryCheckBox_label.editing,
+.contactName, .confirmDelete h2 {
+  font-family: sans-serif;
+  text-transform: uppercase;
+  font-weight: 900; }
+
+.rect_button, .mainView .welcomePage .addClientButton, .mainView .contactInfo .infoTable .primaryCheckBox_label.checked, form, .confirmDelete, .cancelButton, .deleteButton {
+  border-radius: 5px; }
+
+.rect_button, .mainView .welcomePage .addClientButton, .mainView .contactInfo .infoTable .primaryCheckBox_label.checked {
+  color: white; }
+
+.imageIcons, .editIcon, .saveIcon, .cancelIcon, .sidebar .addClientLine .addIcon, .mainView .sectionHeader .addIcon, .mainView .contactInfo .contactIconMain {
+  border-radius: 50%; }
+
+.addIcon {
+  float: right; }
+
+.editIcon, .saveIcon, .cancelIcon {
+  color: white;
+  float: right;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  margin-left: 13.3333333333px;
+  text-align: center;
+  font-size: 20px; }
+
+.editIcon {
+  background-color: #a8b2bc; }
+
+.saveIcon {
+  background-color: #46d4ba; }
+
+.cancelIcon {
+  background-color: #fb5f62;
+  font-size: 40px; }
+
+.sidebar, .mainView {
+  position: relative;
+  height: 100vh;
+  overflow-y: scroll;
+  float: left; }
+
+.shaded_element, .sidebar, .mainView form {
+  -webkit-box-shadow: 0px 2px 14px 0px #000;
+  -moz-box-shadow: 0px 2px 14px 0px #000;
+  box-shadow: 0px 2px 14px 0px #000; }
+
+.shaded_icon, .editIcon, .saveIcon, .cancelIcon, .sidebar .addClientLine .addIcon, .mainView .sectionHeader .addIcon, .mainView .contactInfo .contactIconMain {
+  -webkit-box-shadow: 0px 2px 14px 0px #a8b2bc;
+  -moz-box-shadow: 0px 2px 14px 0px #a8b2bc;
+  box-shadow: 0px 2px 14px 0px #a8b2bc; }
+
+.sidebar_toggle {
+  position: fixed;
+  top: 0;
+  left: 5px;
+  font-size: 30px;
+  color: #46d4ba; }
+
+.sidebar {
+  width: 300px;
+  background-color: white;
+  z-index: 1000; }
+  .sidebar .topSection {
+    padding: 25px; }
+  .sidebar .vfLogo {
+    display: block;
+    text-align: center;
+    margin-bottom: 40px; }
+  .sidebar .addClientLine {
+    margin-bottom: 25px;
+    border-bottom: 2px solid #d7d8dc; }
+    .sidebar .addClientLine h3 {
+      display: inline-block; }
+    .sidebar .addClientLine .addIcon {
+      width: 24px;
+      height: 24px;
+      line-height: 24px;
+      font-size: 24px;
+      color: #a8b2bc; }
+  .sidebar .StatusBar, .sidebar .filteredClientSection {
+    width: 100%; }
+  .sidebar .StatusBar {
+    height: 24px;
+    line-height: 24px;
+    background-color: #edeef2; }
+  .sidebar .filteredClientRow {
+    display: inline-block;
+    width: 100%;
+    padding: 12.5px 25px; }
+    .sidebar .filteredClientRow:hover {
+      background-color: #f6f7f9; }
+    .sidebar .filteredClientRow span {
+      display: inline-block;
+      font-size: 15px;
+      width: calc(100% - 15px * 4 - 10px);
+      vertical-align: middle; }
+    .sidebar .filteredClientRow div {
+      display: inline-block;
+      text-align: center;
+      font-size: 15px;
+      width: 45px;
+      height: 45px;
+      line-height: 45px;
+      margin-right: 15px;
+      background-color: #46d4ba;
+      color: white;
+      border-radius: 50%; }
+
+.mainView {
+  overflow: auto;
+  width: calc(100% - 300px);
+  min-height: 100vh;
+  padding: 40px;
+  background-color: #eeeff1; }
+  .mainView .welcomePage {
+    position: absolute;
+    top: 50%;
+    text-align: center;
+    width: calc(100% - 40px * 2); }
+    .mainView .welcomePage h2 {
+      font-weight: lighter; }
+    .mainView .welcomePage .addClientButton {
+      display: inline-block;
+      background-color: #46d4ba;
+      padding: 10px 20px; }
+  .mainView form {
+    position: relative;
+    background-color: white;
+    z-index: 100;
+    margin-bottom: 30px; }
+    .mainView form .headerTitle, .mainView form .clientTitle {
+      font-size: 25px; }
+  .mainView .clientInfo {
+    padding: 30px; }
+    .mainView .clientInfo .clientIcon {
+      float: left;
+      display: inline-block;
+      text-align: center;
+      font-size: 30px;
+      width: 90px;
+      height: 90px;
+      line-height: 90px;
+      margin-right: 30px;
+      background-color: #46d4ba;
+      color: white;
+      border-radius: 50%; }
+    .mainView .clientInfo .clientHeader {
+      display: inline-block;
+      width: calc(100% - 120px - 30px * 2 - 40px * 3);
+      height: 80px;
+      margin-top: 24px; }
+      .mainView .clientInfo .clientHeader input {
+        width: 100%; }
+      .mainView .clientInfo .clientHeader select {
+        width: 80%;
+        margin-top: 10px; }
+      .mainView .clientInfo .clientHeader .clientTitle {
+        height: 30px; }
+      .mainView .clientInfo .clientHeader .clientUrl {
+        height: 20px; }
+    .mainView .clientInfo .clientAddressSection {
+      width: 100%;
+      margin-top: 25px;
+      display: inline-block; }
+      .mainView .clientInfo .clientAddressSection .clientAddressFields {
+        width: calc(50% - .5em);
+        margin: 0.5em;
+        float: left;
+        display: grid;
+        overflow: hidden;
+        border-bottom: 1px solid #a8b2bc;
+        transition: all 0.3s ease-in-out; }
+        .mainView .clientInfo .clientAddressSection .clientAddressFields input {
+          padding: 10px 0;
+          margin: 0;
+          font-weight: inherit;
+          font-size: inherit; }
+        .mainView .clientInfo .clientAddressSection .clientAddressFields:nth-of-type(2n-1) {
+          margin-left: 0; }
+        .mainView .clientInfo .clientAddressSection .clientAddressFields:nth-of-type(2n-2) {
+          margin-right: 0; }
+  .mainView .sectionHeader {
+    width: 100%;
+    padding: 30px;
+    background: #f5f5f5;
+    border-radius: 5px 5px 0 0; }
+    .mainView .sectionHeader .headerTitle {
+      display: inline-block; }
+    .mainView .sectionHeader .addIcon {
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      font-size: 40px;
+      color: #a8b2bc; }
+  .mainView .contactInfo, .mainView .noteInfo {
+    padding: 30px; }
+  .mainView .contactInfo .contactIconMain {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 50px;
+    color: #a8b2bc;
+    display: inline-block;
+    float: left;
+    margin-right: 30px; }
+  .mainView .contactInfo .infoTable {
+    width: calc(100% - 50px - 30px - 28px * 3);
+    display: inline-block; }
+    .mainView .contactInfo .infoTable .primaryCheckBox_label, .mainView .contactInfo .infoTable .checkmark {
+      visibility: hidden; }
+    .mainView .contactInfo .infoTable .primaryCheckBox_label.checked {
+      background-color: #46d4ba;
+      color: white;
+      padding: 5px; }
+    .mainView .contactInfo .infoTable .primaryCheckBox_label.editing {
+      background-color: inherit;
+      color: inherit;
+      visibility: hidden; }
+    .mainView .contactInfo .infoTable .checkmark.editing, .mainView .contactInfo .infoTable .primaryCheckBox_label.editing, .mainView .contactInfo .infoTable .primaryCheckBox_label.checked {
+      visibility: visible; }
+    .mainView .contactInfo .infoTable div:last-child {
+      margin-top: 10px; }
+      .mainView .contactInfo .infoTable div:last-child > span {
+        display: inline-block;
+        width: 33%; }
+        .mainView .contactInfo .infoTable div:last-child > span input {
+          width: calc(100% - 25px); }
+  .mainView .noteInfo .infoTable {
+    width: calc(100% - 28px * 3);
+    display: inline-block; }
+    .mainView .noteInfo .infoTable .noteHeaderRow {
+      display: flex; }
+      .mainView .noteInfo .infoTable .noteHeaderRow .createDate {
+        width: 100px;
+        height: 1em;
+        margin: auto 0 auto 15px;
+        font-size: 12px;
+        line-height: 12px;
+        overflow: hidden;
+        color: grey; }
+    .mainView .noteInfo .infoTable textarea {
+      width: 100%;
+      height: 1.25em;
+      margin-top: 10px;
+      border: none;
+      background-color: inherit;
+      overflow: hidden; }
+  .mainView .bottom_decal {
+    position: fixed;
+    bottom: 0;
+    right: 0; }
+
+.rightNavIcons {
+  color: #a9b1bc;
+  width: 28px;
+  height: 28px;
+  line-height: 28px;
+  font-size: 28px;
+  margin-top: 28px;
+  margin-left: 14px;
+  white-space: none; }
+
+.individualInfo, .individualNote {
+  padding: 15px 0; }
+
+.confirmDelete-background {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: -1; }
+  .confirmDelete-background .confirmDelete {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+    width: 350px;
+    padding: 25px;
+    text-align: center;
+    background-color: white; }
+    .confirmDelete-background .confirmDelete .closeConfirmation {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      color: grey; }
+    .confirmDelete-background .confirmDelete .icon {
+      font-size: 28px; }
+    .confirmDelete-background .confirmDelete p {
+      font-weight: lighter; }
+    .confirmDelete-background .confirmDelete .cancelButton, .confirmDelete-background .confirmDelete .deleteButton {
+      padding: 10px 20px;
+      color: white; }
+    .confirmDelete-background .confirmDelete .cancelButton {
+      background-color: grey; }
+    .confirmDelete-background .confirmDelete .deleteButton {
+      background-color: #fb5f62;
+      margin-left: 15px; }
+  .confirmDelete-background.confirming {
+    z-index: 10000; }
+
+@media only screen and (max-width: 1000px) {
+  .sidebar {
+    position: absolute;
+    left: -300px; }
+    .sidebar.active_nav {
+      left: 0; }
+
+  .sidebar_toggle {
+    z-index: 1001; }
+    .sidebar_toggle.active_nav {
+      left: 305px; }
+
+  .mainView {
+    width: 100%; } }
+
+/*# sourceMappingURL=app2.css.map */
